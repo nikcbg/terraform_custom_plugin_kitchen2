@@ -1,0 +1,24 @@
+driver:
+  name: terraform
+
+provisioner:
+  name: terraform
+
+verifier:
+  name: terraform
+
+# Platforms provide hooks for overriding the global Test Kitchen plugin
+# configuration to provide platform-specific values
+platforms:
+  - name: centos
+
+    verifier:
+      systems:
+        - name: local
+
+          backend: local
+
+# Suites include tests and provide additional hooks for overriding the global Test
+# Kitchen plugin configuration
+suites:
+  - name: default
